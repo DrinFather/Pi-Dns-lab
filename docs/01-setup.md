@@ -5,15 +5,15 @@
 ## Checklist
 
 ### Before first boot
-- [ ] Flash **Raspberry Pi OS Lite (64-bit)** with Raspberry Pi Imager
-- [ ] Fill in Imager's customization settings: hostname, username/password, Wi-Fi name and password, Wi-Fi country = US, time zone = America/Chicago
-- [ ] Turn on SSH, choose public-key authentication, and paste in my public key (`~/.ssh/id_ed25519.pub`)
+- [X] Flash **Raspberry Pi OS Lite (64-bit)** with Raspberry Pi Imager
+- [X] Fill in Imager's customization settings: hostname, username/password, Wi-Fi name and password, Wi-Fi country = US, time zone = America/Chicago
+- [X] Turn on SSH, choose public-key authentication, and paste in my public key (`~/.ssh/id_ed25519.pub`)
 
 ### First boot
-- [ ] Wait 2–3 minutes, then SSH in: `ssh <username>@<hostname>.local`
-- [ ] Update everything: `sudo apt update && sudo apt full-upgrade -y`
-- [ ] Write down the Pi's IP address: `hostname -I`
-- [ ] If SSH is laggy, turn off Wi-Fi power saving: `sudo iw wlan0 set power_save off`
+- [X] Wait 2–3 minutes, then SSH in: `ssh <Adrian>@<hostname>.local`
+- [X] Update everything: `sudo apt update && sudo apt full-upgrade -y`
+- [X] Write down the Pi's IP address: `hostname -I`
+- [X] If SSH is laggy, turn off Wi-Fi power saving: `sudo iw wlan0 set power_save off`
 
 ### Pi-hole
 - [ ] Install Pi-hole using the official docs (docs.pi-hole.net). The quick install is `curl -sSL https://install.pi-hole.net | bash`. Piping a script into bash means trusting the source, and the docs also show how to download it and read it first.
@@ -34,5 +34,7 @@ _Write the real steps here, including anything that didn't go to plan._
 | _e.g. `ssh: Could not resolve hostname`_ | _…_ | _…_ |
 
 ## Screenshots
+![First SSH login](../screenshots/ssh-first-login.png)
+
 
 _Save images in `screenshots/` and link them here, e.g. `![Pi-hole dashboard](../screenshots/dashboard.png)`_
