@@ -2,7 +2,6 @@
 
 **Goal:** Lock down the Pi the way you would a real server, then check who has been trying to get in.
 
-> ⚠️ **Be careful with the firewall.** The Pi has no screen, so if you block SSH you'll need a monitor and keyboard to get back in. **Always allow SSH before you turn the firewall on.**
 
 ## Checklist
 
