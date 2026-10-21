@@ -36,13 +36,16 @@ Every website and app starts with a DNS lookup ("what's the IP address for examp
 | DNS filtering | Pi-hole |
 | Analysis | Python 3 |
 | Hardening | SSH keys only, ufw firewall, fail2ban |
+| Remote access | Tailscale (mesh VPN), no ports opened on the house network |
+| Monitoring | Cockpit web dashboard, reached from my phone over Tailscale |
 
 ## Project phases
 
 - [ ] **Phase 1: Setup.** Headless install, SSH, Pi-hole for my own devices. [docs/01-setup.md](docs/01-setup.md)
 - [ ] **Phase 2: Log analysis.** A Python script that flags unusual domains. [docs/02-log-analysis.md](docs/02-log-analysis.md)
 - [ ] **Phase 3: Hardening.** Lock down the Pi and review login attempts. [docs/03-hardening.md](docs/03-hardening.md)
-- [ ] **Phase 4 (next semester):** Forward logs to a SIEM running on my laptop.
+- [ ] **Phase 4: Remote access & monitoring.** Tailscale, a Cockpit dashboard on my phone, and Pi-hole from anywhere. [docs/04-remote-access.md](docs/04-remote-access.md)
+- [ ] **Phase 5 (next semester):** Forward logs to a SIEM running on my laptop.
 
 Session-by-session notes: [docs/lab-notebook.md](docs/lab-notebook.md)
 
@@ -63,6 +66,7 @@ _TODO: Fill this in as you go. Recruiters read this section first. Examples:_
 - Networking (DNS, IP addressing, Wi-Fi troubleshooting)
 - Security monitoring (DNS logs, anomaly detection)
 - System hardening (key-based auth, host firewall, brute-force protection)
+- Secure remote access (Tailscale/WireGuard mesh VPN, web-based server management with Cockpit)
 - Python scripting (log parsing and analysis)
 - Technical documentation
 

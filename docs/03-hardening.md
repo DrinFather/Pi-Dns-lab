@@ -14,7 +14,8 @@
 ### Firewall (ufw)
 - [ ] Install ufw
 - [ ] Allow SSH (22/tcp), DNS (53 tcp and udp) and the Pi-hole web admin (80/tcp, 443/tcp). Ideally allow them only from my home network range.
-- [ ] Turn ufw on, then confirm SSH and DNS still work
+- [ ] Allow traffic on the Tailscale interface (`sudo ufw allow in on tailscale0`) so SSH, DNS and Cockpit (9090/tcp) keep working over Tailscale. Don't open 9090 to the house network.
+- [ ] Turn ufw on, then confirm SSH and DNS still work, both on Wi-Fi and over Tailscale
 - [ ] Save the output of `sudo ufw status verbose` to `configs/`
 
 ### fail2ban

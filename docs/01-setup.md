@@ -19,7 +19,7 @@
 - [X] Install Pi-hole using the official docs (docs.pi-hole.net). The quick install is `curl -sSL https://install.pi-hole.net | bash`. Piping a script into bash means trusting the source, and the docs also show how to download it and read it first.
 - [X] Save the web admin password somewhere safe
 - [ ] Point **my laptop's** DNS at the Pi's IP
-- [ ] Point **my phone's** DNS at the Pi's IP (iPhone: Settings → Wi-Fi → ⓘ → Configure DNS → Manual; on Android it's in the Wi-Fi network's IP settings)
+- [ ] Point **my phone's** DNS at the Pi's IP (iPhone: Settings → Wi-Fi → ⓘ → Configure DNS → Manual; on Android it's in the Wi-Fi network's IP settings). Tried this on 2026-10-21 and it broke my phone's internet, so my phone is moving to Pi-hole over Tailscale instead: [04-remote-access.md](04-remote-access.md)
 - [ ] Confirm my queries show up in the Pi-hole dashboard
 - [ ] Learn how to switch my devices back to automatic DNS in case the Pi goes down
 
@@ -31,7 +31,7 @@ _Write the real steps here, including anything that didn't go to plan._
 
 | Problem | Cause | Fix |
 |---|---|---|
-| _e.g. `ssh: Could not resolve hostname`_ | _…_ | _…_ |
+| iPhone showed "No Internet Connection" after I set its Wi-Fi DNS to the Pi's IP | Not confirmed: the Pi's IP may have changed (no DHCP reservation), client isolation on the house Wi-Fi, phone and Pi on different subnets, or Pi-hole only answering local requests | Set the iPhone's DNS back to Automatic. Switched the phone to Pi-hole over Tailscale ([04-remote-access.md](04-remote-access.md)) |
 
 ## Screenshots
 ![First SSH login](../screenshots/ssh-first-login.png)
