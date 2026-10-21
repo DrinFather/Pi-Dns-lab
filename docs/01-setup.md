@@ -16,8 +16,8 @@
 - [X] If SSH is laggy, turn off Wi-Fi power saving: `sudo iw wlan0 set power_save off`
 
 ### Pi-hole
-- [ ] Install Pi-hole using the official docs (docs.pi-hole.net). The quick install is `curl -sSL https://install.pi-hole.net | bash`. Piping a script into bash means trusting the source, and the docs also show how to download it and read it first.
-- [ ] Save the web admin password somewhere safe
+- [X] Install Pi-hole using the official docs (docs.pi-hole.net). The quick install is `curl -sSL https://install.pi-hole.net | bash`. Piping a script into bash means trusting the source, and the docs also show how to download it and read it first.
+- [X] Save the web admin password somewhere safe
 - [ ] Point **my laptop's** DNS at the Pi's IP
 - [ ] Point **my phone's** DNS at the Pi's IP (iPhone: Settings → Wi-Fi → ⓘ → Configure DNS → Manual; on Android it's in the Wi-Fi network's IP settings)
 - [ ] Confirm my queries show up in the Pi-hole dashboard
