@@ -86,6 +86,7 @@ On 2026-10-21 I tried pointing my iPhone's Wi-Fi DNS at the Pi, which broke my p
 | `hostname -I` showed several IPs and I didn't know which was the Pi's | The Pi has one address per network connection: Wi-Fi, Tailscale and IPv6 | `tailscale ip -4` prints only the Tailscale address |
 | Expected the Tailscale IP to just open Pi-hole | Each program listens on its own port | Cockpit is at `https://<tailscale-ip>:9090` |
 | Cockpit asked for the "server user account" | It means the Pi's own Linux login, not my Tailscale or Pi-hole login | Logged in with my Pi username (`whoami`) and password |
+| 2026-10-23: SSH from my laptop timed out, and the Tailscale app showed the Pi as offline | Not confirmed. The Pi dropped off the network (possibly Wi-Fi power saving or a power issue) | Restarted the Pi and it came back online. Next: check `vcgencmd get_throttled` and turn off Wi-Fi power saving permanently |
 
 ## Screenshots
 

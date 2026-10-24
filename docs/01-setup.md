@@ -5,7 +5,7 @@
 ## Checklist
 
 ### Before first boot
-- [X] Flash **Raspberry Pi OS Lite (64-bit)** with Raspberry Pi Imager
+- [X] Flash **Raspberry Pi OS (64-bit)** with Raspberry Pi Imager. I meant to use Lite but ended up with the desktop version, so I set it to boot to the console instead.
 - [X] Fill in Imager's customization settings: hostname, username/password, Wi-Fi name and password, Wi-Fi country = US, time zone = America/Chicago
 - [X] Turn on SSH, choose public-key authentication, and paste in my public key (`~/.ssh/id_ed25519.pub`)
 

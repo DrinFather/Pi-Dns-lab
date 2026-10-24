@@ -57,3 +57,31 @@ sudo tailscale set --accept-dns=false
 - Finish Pi-hole over Tailscale and check that my phone's queries show up in the Query Log
 - Disable key expiry for the Pi in the Tailscale admin console
 - Set up Termius and a healthchecks.io alert
+
+## 2026-10-23: Finding the Pi from my laptop, and an outage
+
+Goal: Practice looking at the network from my Windows laptop, find the Pi's IP myself, and SSH in.
+
+**What I did:**
+- Worked on finding the Pi's IP from PowerShell: checked my own IP and subnet, listed known devices, and filtered them by the Raspberry Pi MAC prefix
+- Tried to SSH in and got `Connection timed out`
+- Checked the Tailscale app on my phone, which showed the Pi as offline, so the problem was the Pi and not my laptop
+- Restarted the Pi, and SSH worked again
+
+**Commands worth remembering (Windows PowerShell):**
+```powershell
+ipconfig                                   # my IP, subnet mask, gateway
+arp -a                                     # devices my laptop knows about
+1..254 | ForEach-Object { ping -n 1 -w 100 "192.168.X.$_" | Out-Null }   # ping sweep to fill the ARP table
+arp -a | Select-String "2c-cf-67|d8-3a-dd" # Raspberry Pi MAC prefixes
+ping -4 <hostname>.local                   # find the Pi by hostname
+Test-NetConnection <pi-ip> -Port 22        # is SSH reachable?
+```
+
+**What broke and how I fixed it:**
+- SSH timed out. A timeout means no reply at all (wrong IP or device offline), unlike `Connection refused` (device is up but SSH isn't running) or `Permission denied` (wrong username or key). The Tailscale app showing "offline" confirmed the Pi had dropped off the network. Fix: restarted the Pi. Root cause not found yet.
+
+**Next time:**
+- Check for power problems: `vcgencmd get_throttled` (`0x0` means fine)
+- Turn off Wi-Fi power saving permanently with `nmcli`, since `iw` resets on reboot
+- Find out why it dropped: `last -x | head` shows reboots and shutdowns

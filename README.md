@@ -32,7 +32,7 @@ Every website and app starts with a DNS lookup ("what's the IP address for examp
 | Board | Raspberry Pi 5 (1GB RAM) |
 | Storage | microSD (_TODO: size_) |
 | Network | House Wi-Fi (no Ethernet available) |
-| OS | Raspberry Pi OS Lite (64-bit), headless |
+| OS | Raspberry Pi OS (64-bit), set to boot to the text console to save RAM; run headless over SSH |
 | DNS filtering | Pi-hole |
 | Analysis | Python 3 |
 | Hardening | SSH keys only, ufw firewall, fail2ban |
